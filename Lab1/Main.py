@@ -16,7 +16,7 @@ def Fs(xs, epss, alpha=1.0):
     h_x = xs[1] - xs[0]
     matrix_A = kernel(xs[None, :], epss[:, None], alpha)
     vector_f = func(xs)
-    Fs = np.dot(matrix_A, np.transpose(vector_f)) * h_x
+    Fs = np.dot(matrix_A, vector_f) * h_x
     return Fs
 
 
@@ -73,3 +73,4 @@ epss = np.linspace(p, q, m)
 plots_f(xs)
 plots_F(xs, epss, alpha)
 plots_K(xs, epss, alpha)
+
