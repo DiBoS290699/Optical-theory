@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import scipy
+import time
 
 
 def GL_mod(n, p, r, phi):
@@ -70,36 +71,68 @@ def manual_integrate(m, xs, f):
     return res
 
 
-def fast_fourier_transform_2d(f, xs, ys, N, M, a):
+def fft_2d(f, xs, N, M, a):
     h = xs[1] - xs[0]
     padding = int((M - N) / 2)
 
-    input_f = np.pad(f, padding)  # Шаг 2
-    input_f = np.fft.fftshift(input_f)  # Шаг 3
-    res = np.fft.fft2(input_f) * (h ** 2)  # Шаг 4
+    y = np.pad(f, padding)
+    y = np.fft.fftshift(y)
+    Y = np.fft.fft2(y) * (h ** 2)
 
-    res = np.fft.fftshift(res)
-    fft_result = res[padding:-padding, padding:-padding]
+    Y = np.fft.fftshift(Y)
+    result = Y[padding:-padding, padding:-padding]
 
     b = (N ** 2) / (4 * a * M)
 
     xv, yv = np.linspace(-b, b, N), np.linspace(-b, b, N)
     new_xs, new_ys = np.meshgrid(xv, yv)
-    return fft_result, new_xs, new_ys
+    return result, new_xs, new_ys
+
+
+def calc_time_fft_and_hankel():
+    N = [64, 128, 256, 512]
+    n = 2
+    m = -3
+    R = 5
+    a = 5
+    b = 5
+    for i in N:
+        total_time_for_fft = 0
+        total_time_for_Hankel = 0
+        r = np.linspace(0, R, i, endpoint=True)
+        f = func(r, n, m)
+        image = recovery_image(f, i - 1, m)
+        launches = 5
+        for k in range(launches):
+            t = time.time()
+            manual_integrate(m, r, f)
+            t = time.time() - t
+            total_time_for_Hankel += t
+            new_N = i * 2
+            M = int((new_N ** 2) / (4 * b * a))
+            t = time.time()
+            fft_2d(image, r, new_N, M, R)
+            t = time.time() - t
+            total_time_for_fft += t
+        print("-----------------------------------------------------------------------------------")
+        print(f"Среднее время выполнения при дискретизации = {i} точки и при {launches} запусках")
+        print(f"Преобразование Ханкеля: {total_time_for_Hankel / launches}")
+        print(f"Двумерное БПФ: {total_time_for_fft / launches}")
+        print("-----------------------------------------------------------------------------------")
 
 
 n = 2
 m = -3
 R = 5
-N = 512
+N = 256
 
 r = np.linspace(0, R, N, endpoint=True)
 f = func(r, n, m)
-plots_f(r, f, "График f(r)")
+plots_f(r, f, "f(r)")
 image = recovery_image(f, N - 1, m)
 plots_image(image)
 man_hank = manual_integrate(m, r, f)
-plots_f(r, man_hank, "График F(p)")
+plots_f(r, man_hank, "F(p)")
 image_hank = recovery_image(man_hank, N - 1, m)
 plots_image(image_hank)
 
@@ -107,5 +140,7 @@ new_N = N * 2
 a = 5
 b = 5
 M = int((new_N ** 2) / (4 * b * a))
-fft_f, _, _ = fast_fourier_transform_2d(image, r, r, new_N, M, R)
+fft_f, _, _ = fft_2d(image, r, new_N, M, R)
 plots_image(fft_f)
+
+calc_time_fft_and_hankel()

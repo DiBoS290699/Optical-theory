@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2276033-3e5f-440e-9b24-3ad627f96d86" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="182" column="57" lean-forward="true" selection-start-line="182" selection-start-column="57" selection-end-line="182" selection-end-column="57" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -45,7 +45,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-61" />
+    <option name="x" value="1446" />
     <option name="y" value="-16" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -55,24 +55,11 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Lab2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab2" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Coding theory/Lab4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Scientific Research Work" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -86,7 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main1">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Lab2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,8 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Main1" />
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.Main1" />
       </list>
     </recent_temporary>
   </component>
@@ -150,14 +137,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35969663" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5433715" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -188,18 +175,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="136" selection-start-line="136" selection-end-line="139" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="182" column="57" lean-forward="true" selection-start-line="182" selection-start-column="57" selection-end-line="182" selection-end-column="57" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
